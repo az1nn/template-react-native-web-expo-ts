@@ -17,7 +17,9 @@ module.exports = {
     + 'react-native-reanimated|react-native-gesture-handler|'
     + 'react-native-safe-area-context|react-native-screens|'
     + 'react-native-get-random-values|react-native-google-mobile-ads|'
-    + 'uuid|@shopify/react-native-skia|expo-haptics|expo-constants))',
+    + 'uuid|@shopify/react-native-skia|expo-haptics|expo-constants|'
+    + 'nativewind|@rn-primitives|lucide-react-native|class-variance-authority|'
+    + 'clsx|tailwind-merge))',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',

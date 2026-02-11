@@ -23,6 +23,16 @@ A fully scaffolded, cross-platform (iOS / Android / Web) React Native template a
 - **npm** ≥ 9
 - **Expo CLI** (bundled via `npx expo`)
 
+## Adding UI Components
+
+This project uses [React Native Reusables](https://reactnativereusables.com) for its UI library. To add new components (e.g., avatar, checkbox, dialog), run:
+
+```bash
+npx @react-native-reusables/cli@latest add [component]
+```
+
+Use `npx @react-native-reusables/cli@latest add --help` to see all available options.
+
 ## Quick Start
 
 ```bash

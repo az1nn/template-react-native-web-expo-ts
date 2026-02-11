@@ -1,3 +1,4 @@
+import './global.css';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import ErrorBoundary from './src/components/ErrorBoundary';
