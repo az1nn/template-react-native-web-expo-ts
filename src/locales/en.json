@@ -1,0 +1,16 @@
+{
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "back": "Back"
+  },
+  "home": {
+    "title": "Welcome",
+    "subtitle": "React Native Template",
+    "goToDetails": "View Details"
+  },
+  "details": {
+    "title": "Details",
+    "idLabel": "Item ID"
+  }
+}
