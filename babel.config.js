@@ -2,8 +2,8 @@ module.exports = function (api) {
   api.cache(true);
   return {
     presets: [
-      ['babel-preset-expo', { flow: false }],
-      '@babel/preset-flow',
+      'babel-preset-expo',
+      'nativewind/babel',
     ],
     plugins: []
   };

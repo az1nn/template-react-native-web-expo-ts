@@ -80,7 +80,6 @@ Expo managed workflow is used — no ejected native projects. Native modules tha
 |---|---|---|
 | `typescript` | ^5.1.3 | Language |
 | `@babel/core` | ^7.20.0 | Build |
-| `@babel/preset-flow` | ^7.27.1 | Build |
 | `babel-jest` | ^30.2.0 | Test transform |
 | `jest` | ^30.2.0 | Test runner |
 | `jest-expo` | 50.0.0 | Test preset |
@@ -186,8 +185,8 @@ module.exports = function (api) {
   api.cache(true);
   return {
     presets: [
-      ['babel-preset-expo', { flow: false }],
-      '@babel/preset-flow',
+      'babel-preset-expo',
+      'nativewind/babel',
     ],
     plugins: [],
   };
@@ -196,6 +195,7 @@ module.exports = function (api) {
 
 - `babel-preset-expo` handles React Native + JSX transform.
 - `@babel/preset-flow` for Flow-typed third-party code.
+- **`react-native-reanimated/plugin` must always be the last plugin** in the list.
 
 ---
 

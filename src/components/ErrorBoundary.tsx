@@ -1,5 +1,7 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
+import { Text } from '@/components/ui/text';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   children: ReactNode;
@@ -31,15 +33,15 @@ class ErrorBoundary extends Component<Props, State> {
   render(): ReactNode {
     if (this.state.hasError) {
       return (
-        <View style={styles.container}>
-          <Text style={styles.emoji}>⚠️</Text>
-          <Text style={styles.title}>Something went wrong</Text>
-          <Text style={styles.message}>
+        <View className="flex-1 bg-background justify-center items-center p-8">
+          <Text className="text-5xl mb-4">⚠️</Text>
+          <Text className="text-2xl font-bold text-foreground mb-3">Something went wrong</Text>
+          <Text className="text-sm text-muted-foreground text-center mb-8 leading-5">
             {this.state.error?.message || 'An unexpected error occurred'}
           </Text>
-          <TouchableOpacity style={styles.button} onPress={this.handleRetry}>
-            <Text style={styles.buttonText}>Try Again</Text>
-          </TouchableOpacity>
+          <Button onPress={this.handleRetry}>
+            <Text>Try Again</Text>
+          </Button>
         </View>
       );
     }
@@ -47,43 +49,5 @@ class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1a1a2e',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 32,
-  },
-  emoji: {
-    fontSize: 48,
-    marginBottom: 16,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#ffffff',
-    marginBottom: 12,
-  },
-  message: {
-    fontSize: 14,
-    color: '#a0a0c0',
-    textAlign: 'center',
-    marginBottom: 32,
-    lineHeight: 20,
-  },
-  button: {
-    backgroundColor: '#6c63ff',
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 12,
-  },
-  buttonText: {
-    color: '#ffffff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-});
 
 export default ErrorBoundary;

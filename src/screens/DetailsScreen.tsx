@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useTranslation } from 'react-i18next';
 import { DetailsScreenNavigationProp, DetailsScreenRouteProp } from '../types/navigation';
+import { Button } from '@/components/ui/button';
+import { Text } from '@/components/ui/text';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const DetailsScreen: React.FC = () => {
   const navigation = useNavigation<DetailsScreenNavigationProp>();
@@ -11,77 +14,35 @@ const DetailsScreen: React.FC = () => {
   const { id } = route.params;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.content}>
-        <Text style={styles.title}>{t('details.title')}</Text>
-        <View style={styles.card}>
-          <Text style={styles.label}>{t('details.idLabel')}</Text>
-          <Text style={styles.value}>{id}</Text>
-        </View>
-        <TouchableOpacity
-          style={styles.button}
+    <View className="flex-1 bg-background justify-center items-center p-8">
+      <View className="items-center w-full max-w-md gap-6">
+        <Text className="text-3xl font-bold text-foreground mb-6">
+          {t('details.title')}
+        </Text>
+
+        <Card className="w-full mb-8 border-border bg-card">
+          <CardHeader>
+             <CardTitle className="text-sm font-medium text-muted-foreground uppercase tracking-wider text-center">
+               {t('details.idLabel')}
+             </CardTitle>
+          </CardHeader>
+          <CardContent className="items-center pb-6">
+            <Text className="text-2xl font-semibold text-primary">
+              {id}
+            </Text>
+          </CardContent>
+        </Card>
+
+        <Button
+          variant="outline"
           onPress={() => navigation.goBack()}
-          accessibilityRole="button"
+          className="w-full"
         >
-          <Text style={styles.buttonText}>{t('common.back')}</Text>
-        </TouchableOpacity>
+          <Text>{t('common.back')}</Text>
+        </Button>
       </View>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1a1a2e',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  content: {
-    alignItems: 'center',
-    paddingHorizontal: 32,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: '700',
-    color: '#ffffff',
-    marginBottom: 24,
-  },
-  card: {
-    backgroundColor: '#16213e',
-    borderRadius: 16,
-    padding: 24,
-    marginBottom: 32,
-    minWidth: 240,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#2a2a4a',
-  },
-  label: {
-    fontSize: 14,
-    color: '#a0a0c0',
-    marginBottom: 8,
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-  },
-  value: {
-    fontSize: 20,
-    fontWeight: '600',
-    color: '#6c63ff',
-  },
-  button: {
-    backgroundColor: 'transparent',
-    paddingVertical: 14,
-    paddingHorizontal: 32,
-    borderRadius: 12,
-    borderWidth: 2,
-    borderColor: '#6c63ff',
-  },
-  buttonText: {
-    color: '#6c63ff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-});
 
 export default DetailsScreen;
