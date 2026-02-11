@@ -6,6 +6,7 @@ import { HomeScreenNavigationProp } from '../types/navigation';
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MenuButton } from '@/components/ui/menu-button';
 
 const HomeScreen: React.FC = () => {
   const navigation = useNavigation<HomeScreenNavigationProp>();
@@ -13,6 +14,7 @@ const HomeScreen: React.FC = () => {
 
   return (
     <View className="flex-1 bg-background justify-center items-center p-8">
+      <MenuButton />
       <View className="items-center w-full max-w-md gap-6">
         <Text className="text-4xl font-bold text-foreground text-center">
           {t('home.title')}
