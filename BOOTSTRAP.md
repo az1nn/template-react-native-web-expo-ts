@@ -14,21 +14,19 @@ Reference for bootstrapping new React Native apps using the framework, Expo conf
 6. [Metro Bundler](#metro-bundler)
 7. [React Navigation](#react-navigation)
 8. [State Management (Context API)](#state-management-context-api)
-9. [Animations (Reanimated)](#animations-reanimated)
-10. [Gestures](#gestures)
-11. [Graphics (Skia & SVG)](#graphics-skia--svg)
-12. [Internationalization (i18n)](#internationalization-i18n)
-13. [Local Storage (AsyncStorage)](#local-storage-asyncstorage)
-14. [Authentication (Google Sign-In)](#authentication-google-sign-in)
-15. [Ads (Google AdMob)](#ads-google-admob)
-16. [Realtime (Socket.io)](#realtime-socketio)
-17. [Haptics](#haptics)
-18. [Web Support](#web-support)
-19. [Testing](#testing)
-20. [ESLint](#eslint)
-21. [Prettier](#prettier)
-22. [Scripts](#scripts)
-23. [Platform Notes](#platform-notes)
+9. [Gestures](#gestures)
+10. [Internationalization (i18n)](#internationalization-i18n)
+11. [Local Storage (AsyncStorage)](#local-storage-asyncstorage)
+12. [Authentication (Google Sign-In)](#authentication-google-sign-in)
+13. [Ads (Google AdMob)](#ads-google-admob)
+14. [Realtime (Socket.io)](#realtime-socketio)
+15. [Haptics](#haptics)
+16. [Web Support](#web-support)
+17. [Testing](#testing)
+18. [ESLint](#eslint)
+19. [Prettier](#prettier)
+20. [Scripts](#scripts)
+21. [Platform Notes](#platform-notes)
 
 ---
 
@@ -61,20 +59,16 @@ Expo managed workflow is used — no ejected native projects. Native modules tha
 | `@react-navigation/native-stack` | ^6.9.17 | Navigation |
 | `react-native-screens` | ~3.29.0 | Navigation |
 | `react-native-safe-area-context` | 4.8.2 | Navigation / Layout |
-| `react-native-reanimated` | ~3.6.1 | Animation |
 | `react-native-gesture-handler` | ~2.14.0 | Gestures |
-| `@shopify/react-native-skia` | 0.1.221 | 2D graphics |
-| `react-native-svg` | 14.1.0 | SVG rendering |
 | `@react-native-async-storage/async-storage` | 1.21.0 | Local storage |
-| `@react-native-google-signin/google-signin` | ^16.1.1 | Authentication |
+| `@react-native-google-signin/google-signin` | ^13.1.0 | Authentication |
 | `react-native-google-mobile-ads` | ^16.0.1 | Monetization |
 | `i18next` | ^25.7.4 | Internationalization |
 | `react-i18next` | ^16.5.3 | i18n React bindings |
 | `socket.io-client` | ^4.8.0 | WebSocket / realtime |
 | `expo-haptics` | ^15.0.8 | Haptic feedback |
 | `expo-dev-client` | ^6.0.20 | Custom native dev builds |
-| `react-native-webview` | ^13.16.0 | Embedded web views |
-| `react-native-get-random-values` | ^2.0.0 | Crypto polyfill (required by uuid) |
+| `react-native-get-random-values` | ^1.11.0 | Crypto polyfill (required by uuid) |
 | `uuid` | ^9.0.0 | Unique ID generation |
 | `@expo/vector-icons` | ^14.1.0 | Icon sets |
 | `@react-native/assets-registry` | ^0.83.1 | Asset resolution |
@@ -91,8 +85,7 @@ Expo managed workflow is used — no ejected native projects. Native modules tha
 | `jest` | ^30.2.0 | Test runner |
 | `jest-expo` | 50.0.0 | Test preset |
 | `@testing-library/react-native` | ^13.3.3 | Component testing |
-| `@testing-library/react-hooks` | ^8.0.1 | Hook testing |
-| `react-test-renderer` | ^18.2.0 | Render testing |
+| `react-test-renderer` | 18.2.0 | Render testing |
 | `ts-jest` | ^29.4.6 | TS transform |
 | `@types/jest` | ^30.0.0 | Types |
 | `@types/node` | ^25.0.9 | Types |
@@ -196,14 +189,13 @@ module.exports = function (api) {
       ['babel-preset-expo', { flow: false }],
       '@babel/preset-flow',
     ],
-    plugins: ['react-native-reanimated/plugin'],  // MUST be last
+    plugins: [],
   };
 };
 ```
 
 - `babel-preset-expo` handles React Native + JSX transform.
 - `@babel/preset-flow` for Flow-typed third-party code.
-- **`react-native-reanimated/plugin` must always be the last plugin** in the list.
 
 ---
 
@@ -337,63 +329,12 @@ Order matters — outer providers are available to inner ones.
 
 ---
 
-## Animations (Reanimated)
-
-Package: `react-native-reanimated` ~3.6.1
-
-Animations run on the native UI thread via worklets.
-
-### Key APIs
-
-| API | Use |
-|---|---|
-| `useSharedValue` | Mutable value on UI thread |
-| `useAnimatedStyle` | Derives animated styles from shared values |
-| `withSpring(target, config)` | Physics-based spring animation |
-| `withTiming(target, config)` | Duration-based animation |
-| `withRepeat(animation, count)` | Loop an animation |
-| `withSequence(a, b, c)` | Chain animations in order |
-| `withDelay(ms, animation)` | Delay before starting |
-
-### Example
-
-```tsx
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
-
-const scale = useSharedValue(1);
-const animatedStyle = useAnimatedStyle(() => ({
-  transform: [{ scale: scale.value }],
-}));
-
-// Trigger:
-scale.value = withSpring(1.2);
-
-return <Animated.View style={animatedStyle} />;
-```
-
-### Setup Reminder
-
-- Babel plugin (`react-native-reanimated/plugin`) must be **last** in `babel.config.js`.
-- `GestureHandlerRootView` must wrap the app root.
-
----
-
 ## Gestures
 
 Package: `react-native-gesture-handler` ~2.14.0
 
 - `GestureHandlerRootView` must wrap the entire app.
 - Provides `Pan`, `Tap`, `LongPress`, `Pinch`, `Rotation` gesture handlers.
-- Works with Reanimated for gesture-driven animations.
-
----
-
-## Graphics (Skia & SVG)
-
-| Package | Use |
-|---|---|
-| `@shopify/react-native-skia` 0.1.221 | High-performance 2D canvas (particle effects, custom drawing) |
-| `react-native-svg` 14.1.0 | SVG rendering (icons, shapes, vector art) |
 
 ---
 
@@ -481,7 +422,7 @@ Tips:
 
 ## Authentication (Google Sign-In)
 
-Package: `@react-native-google-signin/google-signin` ^16.1.1
+Package: `@react-native-google-signin/google-signin` ^13.1.0
 
 - **Android**: requires `google-services.json` in project root.
 - **iOS**: requires `GoogleService-Info.plist` in project root.
@@ -568,8 +509,7 @@ Exclude native-only plugins from `app.config.js` when `EXPO_PUBLIC_BUILD_PLATFOR
 | `jest-expo` 50.0.0 | Expo-aware Jest preset |
 | `babel-jest` ^30.2.0 | Transform JS/TS for Jest |
 | `@testing-library/react-native` ^13.3.3 | Component rendering & queries |
-| `@testing-library/react-hooks` ^8.0.1 | Hook testing utilities |
-| `react-test-renderer` ^18.2.0 | Render tree snapshots |
+| `react-test-renderer` 18.2.0 | Render tree snapshots |
 | `ts-jest` ^29.4.6 | TypeScript transform |
 
 ### Jest Configuration
@@ -590,11 +530,11 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!.*((jest-)?react-native|@react-native(-community)?|'
     + '@react-native/.*|expo(nent)?|@expo(nent)?/.*|react-navigation|'
-    + '@react-navigation/.*|@unimodules/.*|unimodules|react-native-svg|'
-    + 'react-native-reanimated|react-native-gesture-handler|'
+    + '@react-navigation/.*|@unimodules/.*|unimodules|'
+    + 'react-native-gesture-handler|'
     + 'react-native-safe-area-context|react-native-screens|'
     + 'react-native-get-random-values|react-native-google-mobile-ads|'
-    + 'uuid|@shopify/react-native-skia|expo-haptics|expo-constants))',
+    + 'uuid|expo-haptics|expo-constants))',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
@@ -612,10 +552,13 @@ Key details:
 
 Pre-configure mocks for native modules that don't run in Node:
 - React Native core (View, Text, ScrollView, FlatList, etc.)
+- Gesture handler
 - AsyncStorage
 - Google Sign-In
 - expo-haptics
 - uuid
+- Safe area context
+- React Navigation
 - Any native module your app uses
 
 ### Test File Convention
@@ -631,34 +574,71 @@ src/hooks/__tests__/useMyHook.test.ts
 
 ## ESLint
 
+Uses the new [flat config format](https://eslint.org/docs/latest/use/configure/configuration-files-new) (`eslint.config.js`):
+
 ```js
-module.exports = {
-  root: true,
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: { jsx: true },
-    ecmaVersion: 2021,
-    sourceType: 'module',
+const js = require('@eslint/js');
+const tsPlugin = require('@typescript-eslint/eslint-plugin');
+const tsParser = require('@typescript-eslint/parser');
+const reactPlugin = require('eslint-plugin-react');
+const reactHooksPlugin = require('eslint-plugin-react-hooks');
+
+module.exports = [
+  js.configs.recommended,
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaFeatures: { jsx: true },
+        ecmaVersion: 2021,
+        sourceType: 'module',
+      },
+      globals: {
+        console: 'readonly',
+        navigator: 'readonly',
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        fetch: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
+        require: 'readonly',
+        module: 'readonly',
+        process: 'readonly',
+        __dirname: 'readonly',
+        global: 'readonly',
+      },
+    },
+    plugins: {
+      '@typescript-eslint': tsPlugin,
+      react: reactPlugin,
+      'react-hooks': reactHooksPlugin,
+    },
+    rules: {
+      ...tsPlugin.configs.recommended.rules,
+      ...reactPlugin.configs.recommended.rules,
+      ...reactHooksPlugin.configs.recommended.rules,
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    },
+    settings: { react: { version: 'detect' } },
   },
-  plugins: ['@typescript-eslint', 'react', 'react-hooks'],
-  rules: {
-    'react/react-in-jsx-scope': 'off',        // React 17+ JSX transform
-    'react/prop-types': 'off',                 // Using TypeScript
-    '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-  },
-  settings: { react: { version: 'detect' } },
-  env: { browser: true, es2021: true, node: true },
-};
+];
 ```
+
+Key differences from the legacy `.eslintrc.js` format:
+- Uses an array of config objects instead of a single object.
+- `env` is replaced by explicit `globals` in `languageOptions`.
+- Plugins are provided as objects, not string arrays.
+- A separate config block for test files adds Jest globals.
 
 ---
 
@@ -691,7 +671,6 @@ module.exports = {
 | `test:watch` | `jest --watch` | Watch mode |
 | `test:coverage` | `jest --coverage` | With coverage report |
 | `test:ci` | `jest --ci --coverage --maxWorkers=2` | CI-optimized |
-| `test:e2e` | `maestro test e2e/flow.yaml` | Maestro E2E tests |
 | `lint` | `eslint "src/**/*.{ts,tsx}"` | Lint source files |
 | `lint:fix` | `eslint "src/**/*.{ts,tsx}" --fix` | Lint and auto-fix |
 | `format` | `prettier --write "src/**/*.{ts,tsx}"` | Format source files |
