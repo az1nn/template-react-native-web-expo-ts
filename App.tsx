@@ -2,6 +2,7 @@ import './global.css';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import ErrorBoundary from './src/components/ErrorBoundary';
+import { ThemeProvider } from './src/providers/ThemeProvider';
 import { LanguageProvider } from './src/providers/LanguageProvider';
 import { AuthProvider } from './src/providers/AuthProvider';
 import { AdProvider } from './src/providers/AdProvider';
@@ -13,15 +14,17 @@ export default function App() {
   return (
     <ErrorBoundary>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <LanguageProvider>
-          <AuthProvider>
-            <AdProvider>
-              <ToastProvider>
-                <AppNavigator />
-              </ToastProvider>
-            </AdProvider>
-          </AuthProvider>
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <AuthProvider>
+              <AdProvider>
+                <ToastProvider>
+                  <AppNavigator />
+                </ToastProvider>
+              </AdProvider>
+            </AuthProvider>
+          </LanguageProvider>
+        </ThemeProvider>
       </GestureHandlerRootView>
     </ErrorBoundary>
   );

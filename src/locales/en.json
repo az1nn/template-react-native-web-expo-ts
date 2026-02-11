@@ -12,5 +12,13 @@
   "details": {
     "title": "Details",
     "idLabel": "Item ID"
+  },
+  "sidemenu": {
+    "appName": "Template App",
+    "home": "Home",
+    "theme": "Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language"
   }
 }
