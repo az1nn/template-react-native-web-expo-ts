@@ -6,7 +6,6 @@ import { DetailsScreenNavigationProp, DetailsScreenRouteProp } from '../types/na
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { MenuButton } from '@/components/ui/menu-button';
 
 const DetailsScreen: React.FC = () => {
   const navigation = useNavigation<DetailsScreenNavigationProp>();
@@ -16,7 +15,6 @@ const DetailsScreen: React.FC = () => {
 
   return (
     <View className="flex-1 bg-background justify-center items-center p-8">
-      <MenuButton />
       <View className="items-center w-full max-w-md gap-6">
         <Text className="text-3xl font-bold text-foreground mb-6">
           {t('details.title')}

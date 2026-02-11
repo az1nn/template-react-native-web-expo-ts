@@ -12,13 +12,5 @@
   "details": {
     "title": "Detalhes",
     "idLabel": "ID do Item"
-  },
-  "sidemenu": {
-    "appName": "App Template",
-    "home": "Início",
-    "theme": "Tema",
-    "darkMode": "Modo Escuro",
-    "lightMode": "Modo Claro",
-    "language": "Idioma"
   }
 }
