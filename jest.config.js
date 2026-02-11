@@ -13,13 +13,11 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!.*((jest-)?react-native|@react-native(-community)?|'
     + '@react-native/.*|expo(nent)?|@expo(nent)?/.*|react-navigation|'
-    + '@react-navigation/.*|@unimodules/.*|unimodules|react-native-svg|'
-    + 'react-native-reanimated|react-native-gesture-handler|'
+    + '@react-navigation/.*|@unimodules/.*|unimodules|'
+    + 'react-native-gesture-handler|'
     + 'react-native-safe-area-context|react-native-screens|'
     + 'react-native-get-random-values|react-native-google-mobile-ads|'
-    + 'uuid|@shopify/react-native-skia|expo-haptics|expo-constants|'
-    + 'nativewind|@rn-primitives|lucide-react-native|class-variance-authority|'
-    + 'clsx|tailwind-merge))',
+    + 'uuid|expo-haptics|expo-constants))',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
