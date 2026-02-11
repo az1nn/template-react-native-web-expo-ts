@@ -14,9 +14,11 @@ module.exports = {
     'node_modules/(?!.*((jest-)?react-native|@react-native(-community)?|'
     + '@react-native/.*|expo(nent)?|@expo(nent)?/.*|react-navigation|'
     + '@react-navigation/.*|@unimodules/.*|unimodules|'
-    + 'react-native-gesture-handler|'
+    + '@rn-primitives/.*|class-variance-authority|clsx|'
+    + 'react-native-gesture-handler|react-native-reanimated|'
     + 'react-native-safe-area-context|react-native-screens|'
     + 'react-native-get-random-values|react-native-google-mobile-ads|'
+    + 'react-native-svg|lucide-react-native|'
     + 'uuid|expo-haptics|expo-constants))',
   ],
   moduleNameMapper: {

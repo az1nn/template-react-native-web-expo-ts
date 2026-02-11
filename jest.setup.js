@@ -120,6 +120,8 @@ jest.mock('@react-navigation/native', () => {
       reset: jest.fn(),
       isFocused: jest.fn(() => true),
       canGoBack: jest.fn(() => false),
+      openDrawer: jest.fn(),
+      closeDrawer: jest.fn(),
     }),
     useRoute: () => ({
       params: { id: 'test-id' },
@@ -127,6 +129,38 @@ jest.mock('@react-navigation/native', () => {
     useFocusEffect: jest.fn(),
     useIsFocused: jest.fn(() => true),
   };
+});
+
+// Mock @react-navigation/drawer
+jest.mock('@react-navigation/drawer', () => {
+  const View = require('react-native').View;
+  return {
+    createDrawerNavigator: () => ({
+      Navigator: View,
+      Screen: View,
+    }),
+    DrawerContentScrollView: View,
+  };
+});
+
+// Mock nativewind
+jest.mock('nativewind', () => ({
+  useColorScheme: () => ({
+    colorScheme: 'light',
+    setColorScheme: jest.fn(),
+    toggleColorScheme: jest.fn(),
+  }),
+}));
+
+// Mock lucide-react-native
+jest.mock('lucide-react-native', () => {
+  const View = require('react-native').View;
+  return new Proxy(
+    {},
+    {
+      get: () => View,
+    }
+  );
 });
 
 // Mock react-native-screens

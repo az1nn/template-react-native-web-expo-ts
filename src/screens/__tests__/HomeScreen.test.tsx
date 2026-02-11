@@ -10,6 +10,7 @@ jest.mock('react-i18next', () => ({
         'home.title': 'Welcome',
         'home.subtitle': 'React Native Template',
         'home.goToDetails': 'View Details',
+        'home.cardTitle': 'Get Started',
       };
       return translations[key] || key;
     },

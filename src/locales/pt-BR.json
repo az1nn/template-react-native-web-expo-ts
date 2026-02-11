@@ -7,7 +7,8 @@
   "home": {
     "title": "Bem-vindo",
     "subtitle": "Template React Native",
-    "goToDetails": "Ver Detalhes"
+    "goToDetails": "Ver Detalhes",
+    "cardTitle": "Começar"
   },
   "details": {
     "title": "Detalhes",
