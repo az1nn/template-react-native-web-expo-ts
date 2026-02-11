@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-native';
 import { useHaptics } from '../useHaptics';
 
 // Platform is already mocked by react-native in jest setup

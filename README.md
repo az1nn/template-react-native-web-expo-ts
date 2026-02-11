@@ -27,7 +27,7 @@ A fully scaffolded, cross-platform (iOS / Android / Web) React Native template a
 
 ```bash
 # Install dependencies
-npm install --legacy-peer-deps
+npm install
 
 # Start Expo dev server
 npm start
