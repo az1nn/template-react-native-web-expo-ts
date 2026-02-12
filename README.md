@@ -20,7 +20,7 @@ A fully scaffolded, cross-platform (iOS / Android / Web) React Native template a
 ## Prerequisites
 
 - **Node.js** ≥ 18
-- **npm** ≥ 9
+- **pnpm** ≥ 10
 - **Expo CLI** (bundled via `npx expo`)
 
 ## Adding UI Components
@@ -28,46 +28,46 @@ A fully scaffolded, cross-platform (iOS / Android / Web) React Native template a
 This project uses [React Native Reusables](https://reactnativereusables.com) for its UI library. To add new components (e.g., avatar, checkbox, dialog), run:
 
 ```bash
-npx @react-native-reusables/cli@latest add [component]
+pnpm dlx @react-native-reusables/cli@latest add [component]
 ```
 
-Use `npx @react-native-reusables/cli@latest add --help` to see all available options.
+Use `pnpm dlx @react-native-reusables/cli@latest add --help` to see all available options.
 
 ## Quick Start
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start Expo dev server
-npm start
+pnpm start
 
 # Run on web
-npm run web
+pnpm run web
 
 # Run on Android
-npm run android
+pnpm run android
 
 # Run on iOS
-npm run ios
+pnpm run ios
 ```
 
 ## Available Scripts
 
 | Script | Description |
 |---|---|
-| `npm start` | Start Expo dev server |
-| `npm run android` | Run on Android |
-| `npm run ios` | Run on iOS |
-| `npm run web` | Run on web (sets `EXPO_PUBLIC_BUILD_PLATFORM=web`) |
-| `npm test` | Run test suite |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run test:coverage` | Run tests with coverage report |
-| `npm run test:ci` | CI-optimized test run |
-| `npm run lint` | Lint source files |
-| `npm run lint:fix` | Lint and auto-fix |
-| `npm run format` | Format source files with Prettier |
-| `npm run format:check` | Check formatting |
+| `pnpm start` | Start Expo dev server |
+| `pnpm run android` | Run on Android |
+| `pnpm run ios` | Run on iOS |
+| `pnpm run web` | Run on web (sets `EXPO_PUBLIC_BUILD_PLATFORM=web`) |
+| `pnpm test` | Run test suite |
+| `pnpm run test:watch` | Run tests in watch mode |
+| `pnpm run test:coverage` | Run tests with coverage report |
+| `pnpm run test:ci` | CI-optimized test run |
+| `pnpm run lint` | Lint source files |
+| `pnpm run lint:fix` | Lint and auto-fix |
+| `pnpm run format` | Format source files with Prettier |
+| `pnpm run format:check` | Check formatting |
 
 ## Project Structure
 

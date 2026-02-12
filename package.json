@@ -78,5 +78,6 @@
     "ts-jest": "^29.4.6",
     "typescript": "^5.1.3"
   },
-  "private": true
+  "private": true,
+  "packageManager": "pnpm@10.29.2"
 }

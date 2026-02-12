@@ -8,7 +8,7 @@ fi
 
 cd "$CLAUDE_PROJECT_DIR"
 
-# Install npm dependencies if package.json exists
+# Install dependencies if package.json exists
 if [ -f "package.json" ]; then
-  npm install
+  pnpm install
 fi
