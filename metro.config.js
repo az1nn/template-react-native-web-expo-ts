@@ -1,5 +1,16 @@
+const path = require('path');
+const fs = require('fs');
 const { getDefaultConfig } = require('expo/metro-config');
 const { withNativeWind } = require('nativewind/metro');
+
+// Ensure react-native-css-interop cache file exists before Metro hashes it
+const cssInteropCacheDir = path.join(__dirname, 'node_modules', 'react-native-css-interop', '.cache');
+fs.mkdirSync(cssInteropCacheDir, { recursive: true });
+const cssInteropCacheFile = path.join(cssInteropCacheDir, 'web.css');
+if (!fs.existsSync(cssInteropCacheFile)) {
+  fs.writeFileSync(cssInteropCacheFile, '');
+}
+
 const config = getDefaultConfig(__dirname);
 
 config.resolver.sourceExts = [...config.resolver.sourceExts, 'tsx', 'ts'];
