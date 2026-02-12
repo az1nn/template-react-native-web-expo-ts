@@ -1,13 +1,13 @@
 # React Native Template App — Bootstrap Guide
 
-Reference for bootstrapping new React Native apps using the framework, Expo configuration, and npm packages established in this repository.
+Reference for bootstrapping new React Native apps using the framework, Expo configuration, and packages established in this repository.
 
 ---
 
 ## Table of Contents
 
 1. [Core Framework](#core-framework)
-2. [npm Packages](#npm-packages)
+2. [Packages](#packages)
 3. [Expo Configuration](#expo-configuration)
 4. [TypeScript](#typescript)
 5. [Babel](#babel)
@@ -43,7 +43,7 @@ Expo managed workflow is used — no ejected native projects. Native modules tha
 
 ---
 
-## npm Packages
+## Packages
 
 ### Production Dependencies
 

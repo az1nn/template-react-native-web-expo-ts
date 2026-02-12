@@ -16,7 +16,7 @@
 **Why**: The drawer navigator is the standard React Navigation solution for side menus. It works on both native (gesture-based) and web (animated panel).
 
 ```bash
-npx expo install @react-navigation/drawer react-native-reanimated
+pnpm dlx expo install @react-navigation/drawer react-native-reanimated
 ```
 
 After installing, add the `react-native-reanimated/plugin` to `babel.config.js` (must be the **last** plugin in the list).
@@ -133,9 +133,9 @@ Add translation keys for the side menu and theme toggle labels.
 
 ## Step 9 — Verify & test
 
-- Run `npm run lint` and `npm run test` to ensure no regressions.
+- Run `pnpm run lint` and `pnpm test` to ensure no regressions.
 - Fix any lint or type errors.
-- Validate the app starts on web (`npm run web`) without crashing.
+- Validate the app starts on web (`pnpm run web`) without crashing.
 
 ---
 
