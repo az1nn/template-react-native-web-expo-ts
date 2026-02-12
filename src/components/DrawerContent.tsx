@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Switch, Pressable } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import type { DrawerContentComponentProps } from '@react-navigation/drawer';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Home, Moon, Sun, Languages } from 'lucide-react-native';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@/components/ui/text';
+import { Toggle } from '@/components/ui/toggle';
 import { useTheme } from '@/providers/ThemeProvider';
 import { useLanguage } from '@/providers/LanguageProvider';
 
@@ -75,11 +76,11 @@ export const DrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
                 {isDark ? t('sidemenu.darkMode') : t('sidemenu.lightMode')}
               </Text>
             </View>
-            <Switch
+            <Toggle
               value={isDark}
               onValueChange={toggleTheme}
-              trackColor={{ false: '#767577', true: '#6366f1' }}
-              thumbColor={isDark ? '#e0e7ff' : '#f4f3f4'}
+              activeColor="#3b82f6"
+              inactiveColor="#d1d5db"
             />
           </View>
 
