@@ -19,7 +19,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({ className }) => {
     <Pressable
       onPress={() => navigation.openDrawer()}
       className={cn(
-        'absolute top-14 left-4 z-10 h-10 w-10 items-center justify-center rounded-md bg-background/80 active:bg-accent',
+        'absolute top-8 left-4 z-10 h-10 w-10 items-center justify-center rounded-md bg-background/80 active:bg-accent',
         className,
       )}
       accessibilityRole="button"
