@@ -25,7 +25,7 @@ const HomeScreen: React.FC = () => {
 
         <Card className="w-full">
           <CardHeader>
-            <CardTitle>Welcome</CardTitle>
+            <CardTitle>{t('home.cardTitle')}</CardTitle>
           </CardHeader>
           <CardContent className="gap-4">
             <Button
