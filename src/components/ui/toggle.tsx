@@ -53,7 +53,7 @@ export const Toggle: React.FC<ToggleProps> = ({
     () =>
       animatedValueRef.current.interpolate({
         inputRange: [0, 1],
-        outputRange: [2, 30], // Moves from left (2px padding) to right (50px width - 18px thumb - 2px padding = 30px)
+        outputRange: [0, 22], // Container: 50px width, 2px padding = 46px inner width. Thumb: 24px. Movement: 46 - 24 = 22px
       }),
     []
   );
