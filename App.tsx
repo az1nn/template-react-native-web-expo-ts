@@ -1,11 +1,4 @@
-import { Platform } from 'react-native';
-
-// Polyfill Fabric-only native function that react-native-reanimated 3.x
-// calls on web where it doesn't exist (fixes "_removeFromPropsRegistry is not defined")
-if (Platform.OS === 'web' && typeof globalThis._removeFromPropsRegistry === 'undefined') {
-  (globalThis as any)._removeFromPropsRegistry = () => {};
-}
-
+import './reanimated-web-polyfill';
 import './global.css';
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
