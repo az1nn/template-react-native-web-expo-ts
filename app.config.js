@@ -14,8 +14,8 @@ module.exports = () => {
 
   return {
     expo: {
-      name: 'Milkshakespeare',
-      slug: 'milkshakespeare',
+      name: 'Bazar Retrô',
+      slug: 'bazar-retro',
       version: '1.0.0',
       orientation: 'portrait',
       icon: './assets/icon.png',
@@ -28,7 +28,7 @@ module.exports = () => {
       assetBundlePatterns: ['**/*'],
       ios: {
         supportsTablet: true,
-        bundleIdentifier: 'com.milkshakespeare.app',
+        bundleIdentifier: 'com.bazarretro.app',
         googleServicesFile: './GoogleService-Info.plist',
       },
       android: {
@@ -36,7 +36,7 @@ module.exports = () => {
           foregroundImage: './assets/adaptive-icon.png',
           backgroundColor: '#fffbe8',
         },
-        package: 'com.milkshakespeare.app',
+        package: 'com.bazarretro.app',
         googleServicesFile: './google-services.json',
       },
       web: { favicon: './assets/favicon.png' },

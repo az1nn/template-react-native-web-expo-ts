@@ -15,33 +15,41 @@ type MenuItem = {
 
 const MENU_SECTIONS: { titleKey: string; items: MenuItem[] }[] = [
   {
-    titleKey: 'menu.tragedies',
+    titleKey: 'menu.cards',
     items: [
-      { nameKey: 'menu.romeoName', descKey: 'menu.romeoDesc' },
-      { nameKey: 'menu.hamletName', descKey: 'menu.hamletDesc' },
-      { nameKey: 'menu.macbethName', descKey: 'menu.macbethDesc' },
+      { nameKey: 'menu.pokemonName', descKey: 'menu.pokemonDesc' },
+      { nameKey: 'menu.magicName', descKey: 'menu.magicDesc' },
+      { nameKey: 'menu.yugiohName', descKey: 'menu.yugiohDesc' },
     ],
   },
   {
-    titleKey: 'menu.comedies',
+    titleKey: 'menu.retroGames',
     items: [
-      { nameKey: 'menu.midsummerName', descKey: 'menu.midsummerDesc' },
-      { nameKey: 'menu.tempestName', descKey: 'menu.tempestDesc' },
-      { nameKey: 'menu.twelfthNightName', descKey: 'menu.twelfthNightDesc' },
+      { nameKey: 'menu.n64Name', descKey: 'menu.n64Desc' },
+      { nameKey: 'menu.atariName', descKey: 'menu.atariDesc' },
+      { nameKey: 'menu.playstationName', descKey: 'menu.playstationDesc' },
     ],
   },
   {
-    titleKey: 'menu.histories',
+    titleKey: 'menu.books',
     items: [
-      { nameKey: 'menu.henryName', descKey: 'menu.henryDesc' },
-      { nameKey: 'menu.richardName', descKey: 'menu.richardDesc' },
+      { nameKey: 'menu.fictionName', descKey: 'menu.fictionDesc' },
+      { nameKey: 'menu.comicsName', descKey: 'menu.comicsDesc' },
+      { nameKey: 'menu.nonFictionName', descKey: 'menu.nonFictionDesc' },
     ],
   },
   {
-    titleKey: 'menu.sonnets',
+    titleKey: 'menu.cdsVinyls',
     items: [
-      { nameKey: 'menu.sonnet18Name', descKey: 'menu.sonnet18Desc' },
-      { nameKey: 'menu.sonnet130Name', descKey: 'menu.sonnet130Desc' },
+      { nameKey: 'menu.cdsName', descKey: 'menu.cdsDesc' },
+      { nameKey: 'menu.vinylsName', descKey: 'menu.vinylsDesc' },
+    ],
+  },
+  {
+    titleKey: 'menu.beverages',
+    items: [
+      { nameKey: 'menu.hotBeveragesName', descKey: 'menu.hotBeveragesDesc' },
+      { nameKey: 'menu.coldBeveragesName', descKey: 'menu.coldBeveragesDesc' },
     ],
   },
 ];

@@ -62,22 +62,22 @@ const HomeScreen: React.FC = () => {
           <View className="w-full max-w-lg gap-4">
             <Card className="w-full border-accent/30">
               <CardHeader>
-                <CardTitle className="text-secondary">{t('home.featuredRomeo')}</CardTitle>
-                <CardDescription>{t('home.featuredRomeoDesc')}</CardDescription>
+                <CardTitle className="text-secondary">{t('home.featuredCards')}</CardTitle>
+                <CardDescription>{t('home.featuredCardsDesc')}</CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="w-full border-accent/30">
               <CardHeader>
-                <CardTitle className="text-secondary">{t('home.featuredHamlet')}</CardTitle>
-                <CardDescription>{t('home.featuredHamletDesc')}</CardDescription>
+                <CardTitle className="text-secondary">{t('home.featuredRetro')}</CardTitle>
+                <CardDescription>{t('home.featuredRetroDesc')}</CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="w-full border-accent/30">
               <CardHeader>
-                <CardTitle className="text-secondary">{t('home.featuredMidsummer')}</CardTitle>
-                <CardDescription>{t('home.featuredMidsummerDesc')}</CardDescription>
+                <CardTitle className="text-secondary">{t('home.featuredBeverages')}</CardTitle>
+                <CardDescription>{t('home.featuredBeveragesDesc')}</CardDescription>
               </CardHeader>
             </Card>
           </View>

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Milkshakespeare Brand — Light Mode */
+    /* Bazar Retrô — Light Mode */
     --background: 50 100% 95%;        /* Ivory Mist #fffbe8 */
     --foreground: 217 74% 17%;        /* Prussian Blue #0b234a */
     --card: 0 0% 100%;
@@ -28,7 +28,7 @@
   }
 
   .dark {
-    /* Milkshakespeare Brand — Dark Mode */
+    /* Bazar Retrô — Dark Mode */
     --background: 217 74% 10%;        /* Darker Prussian Blue */
     --foreground: 50 100% 95%;        /* Ivory Mist */
     --card: 217 74% 14%;
