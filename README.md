@@ -19,8 +19,9 @@ A fully scaffolded, cross-platform (iOS / Android / Web) React Native template a
 
 ## Prerequisites
 
-- **Node.js** ≥ 18
-- **pnpm** ≥ 10
+- **Node.js** 24.x (current LTS line)
+- **npm** 11.x
+- **pnpm** 10.x
 - **Expo CLI** (bundled via `npx expo`)
 
 ## Dependency Maintenance
