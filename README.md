@@ -19,9 +19,24 @@ A fully scaffolded, cross-platform (iOS / Android / Web) React Native template a
 
 ## Prerequisites
 
-- **Node.js** ≥ 18
-- **pnpm** ≥ 10
+- **Node.js** 24.x (current LTS line)
+- **npm** 11.x
+- **pnpm** 10.x
 - **Expo CLI** (bundled via `npx expo`)
+
+## Dependency Maintenance
+
+Keep dependencies current with safe, non-breaking updates:
+
+```bash
+# Refresh lockfile to latest versions allowed by package.json ranges
+npm update
+
+# Check remaining newer major versions
+npm outdated
+```
+
+Use Expo SDK upgrades separately (for example, Expo 50 to 51+) because they require coordinated React Native and tooling changes.
 
 ## Adding UI Components
 
