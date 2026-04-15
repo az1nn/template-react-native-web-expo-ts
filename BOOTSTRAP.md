@@ -678,6 +678,18 @@ Key differences from the legacy `.eslintrc.js` format:
 
 ---
 
+## Dependency Update Workflow
+
+Use this lightweight maintenance cycle for routine updates:
+
+1. Run `npm update` to pull the latest non-breaking versions allowed by `package.json`.
+2. Run `npm outdated` to review remaining major-version upgrades that may require migration work.
+3. Run lint and tests (`npm run lint`, `npm test`) before merging.
+
+For Expo major SDK migrations, follow Expo's upgrade guide and update React Native ecosystem packages together.
+
+---
+
 ## Platform Notes
 
 ### Android
