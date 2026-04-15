@@ -35,7 +35,7 @@ npm update
 npm outdated
 ```
 
-Use Expo SDK upgrades separately (for example, Expo 50 → 51+) because they require coordinated React Native and tooling changes.
+Use Expo SDK upgrades separately (for example, Expo 50 to 51+) because they require coordinated React Native and tooling changes.
 
 ## Adding UI Components
 
