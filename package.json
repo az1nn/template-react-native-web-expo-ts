@@ -16,7 +16,7 @@
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
-    "postinstall": "mkdir -p node_modules/react-native-css-interop/.cache && touch node_modules/react-native-css-interop/.cache/web.css && mkdir -p node_modules/.cache/nativewind"
+    "postinstall": "node -e \"const fs=require('fs'); fs.mkdirSync('node_modules/react-native-css-interop/.cache', {recursive: true}); fs.writeFileSync('node_modules/react-native-css-interop/.cache/web.css', ''); fs.mkdirSync('node_modules/.cache/nativewind', {recursive: true});\""
   },
   "dependencies": {
     "@babel/runtime": "^7.28.4",
